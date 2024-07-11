@@ -10,6 +10,10 @@ public class VerticalMovementController : MonoBehaviour
     [SerializeField] private float minimumMetronomeHitResult = 0.05f;
     [SerializeField] private float jumpVelocity = 10f;
     [SerializeField] private float gravityAcceleration = 10f;
+    private readonly float _jumpTime = 0.001f;
+    private float _jumpElapsedTime;
+    private bool _isJumping;
+    private int _gravityDirection = 1;
     private Rigidbody2D _rigidbody2D;
     private Metronome _metronome;
 
@@ -26,25 +30,41 @@ public class VerticalMovementController : MonoBehaviour
     private void FixedUpdate()
     {
         var velocity = _rigidbody2D.velocity;
-        if (!groundChecker.IsGrounded())
-        {
-            velocity.y -= gravityAcceleration * Time.fixedDeltaTime;
-        }
-        else if (velocity.y <= 0f)
+        if (groundChecker.IsGrounded() && !_isJumping)
         {
             velocity.y = 0f;
+        }
+        else
+        {
+            if (_isJumping)
+            {
+                _jumpElapsedTime += Time.fixedDeltaTime;
+                if (_jumpElapsedTime >= _jumpTime)
+                {
+                    _isJumping = false;
+                    _jumpElapsedTime = 0f;
+                }
+            }
+            velocity.y -= _gravityDirection * gravityAcceleration * Time.fixedDeltaTime;
         }
         _rigidbody2D.velocity = velocity;
     }
 
     private void OnJump(InputValue value)
     {
-        if (!value.isPressed) return;
-        if (!groundChecker.IsGrounded()) return;
+        if(!JumpCondition(value)) return;
+        _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, _gravityDirection * jumpVelocity);
+        _gravityDirection = -_gravityDirection;
+        _isJumping = true;
+        _jumpElapsedTime = 0f;
+    }
+
+    private bool JumpCondition(InputValue value)
+    {
+        if (!value.isPressed) return false;
+        if (!groundChecker.IsGrounded()) return false;
         var metronomeHitResult = _metronome.TryHit();
-        if (metronomeHitResult > minimumMetronomeHitResult)
-        {
-            _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, jumpVelocity);
-        }
+        if (metronomeHitResult < minimumMetronomeHitResult) return false;
+        return true;
     }
 }

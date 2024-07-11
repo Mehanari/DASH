@@ -10,7 +10,7 @@ namespace Src.GroundChecking
     
         public override bool IsGrounded()
         {
-            var count = Physics2D.CircleCastNonAlloc(transform.position, radius, Vector2.one, _hits, 1000f, groundLayer);
+            var count = Physics2D.CircleCastNonAlloc(transform.position, radius, Vector2.one, _hits, radius, groundLayer);
             return count > 0;
         }
 

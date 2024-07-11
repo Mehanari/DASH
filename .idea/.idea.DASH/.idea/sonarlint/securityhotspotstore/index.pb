@@ -1,0 +1,39 @@
+
+`
+0Assets/Src/GroundChecking/CircleGroundChecker.cs,8\e\8e9d59c16051115f840c560e933e9b62fb5ff84d
+P
+ Assets/Src/ObstacleHitHandler.cs,8\f\8f40bb45d190e8f3454ff42c04af2ebb3afc63e0
+U
+%ProjectSettings/ProjectSettings.asset,f\2\f2ed32d7c38fb54ca0f77eb9645108b362199c9d
+X
+(Assets/Src/VerticalMovementController.cs,a\f\afcd50db17eb44e4ce2bf5ebcf0db63e01972d53
+Z
+*Assets/Src/MetronomeLogic/MetronomeView.cs,b\7\b786fe3b559a417667a9529d4893d78013e43ff8
+f
+6Assets/Src/SceneInitializers/SampleSceneInitializer.cs,8\a\8aff7b64ccf6a3c8a4f583c24aa75b6131a0e4be
+V
+&Assets/Src/MetronomeLogic/Metronome.cs,d\3\d323d7044b8805689e80f8489d7365b9d0fdb1ed
+I
+Assets/Tests/Tests.asmdef,2\0\20c5315a40cfcebbb23f474ce1f990aeb8c13250
+K
+Packages/packages-lock.json,e\e\ee5c02414182ac2ee9793586b738cae04287b8bf
+F
+Packages/manifest.json,c\c\cc2c44fef6067b608c229f816ad03fa26e70a2f4
+E
+Assets/Src/Src.asmdef,0\6\06b591c0e5162e5e20064af265574ac45d3f247c
+_
+/Assets/Src/MetronomeLogic/MetronomeBehaviour.cs,d\1\d10f466540c9e1d44369af0213bfec8eb5bad706
+e
+5Assets/Src/GroundChecking/CompositeOrGroundChecker.cs,d\8\d8aebc2360c518f6d1f3186d3e6b6765fea620c1
+P
+ ProjectSettings/TagManager.asset,b\b\bb5c31022a6bdb0c8de055d7b2657e774af959a3
+Z
+*Assets/Src/GroundChecking/GroundChecker.cs,6\2\62041ffc75a2d2086c6e6eb9dd38bca50a504504
+N
+Assets/Tests/MetronomeTests.cs,5\d\5de40863d20ec26b4304d082abf7c70804eb493d
+\
+,Assets/Src/MetronomeLogic/MetronomeConfig.cs,3\9\396a643a7e71616faa4a6749fdef4cace6387ca7
+Z
+*Assets/Src/HorizontalMovementController.cs,5\d\5d0df9e79e581de8cfbf4447f1ec03b86e876434
+P
+ Assets/Src/ObstacleHitTrigger.cs,c\5\c5df9e8796cffff67c81b55eff077552c49009ba
